@@ -1,0 +1,993 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3941F28B21FAD839007F7FE3 /* VoiceBroadcastDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3941F28A21FAD839007F7FE3 /* VoiceBroadcastDemoTests.m */; };
+		3941F29621FAD839007F7FE3 /* VoiceBroadcastDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3941F29521FAD839007F7FE3 /* VoiceBroadcastDemoUITests.m */; };
+		3941F33F21FADB18007F7FE3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3941F2C021FADB18007F7FE3 /* main.m */; };
+		3941F34021FADB18007F7FE3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3941F2C121FADB18007F7FE3 /* AppDelegate.m */; };
+		3941F34F21FADB18007F7FE3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3941F2EE21FADB18007F7FE3 /* ViewController.m */; };
+		3941F35621FADB18007F7FE3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3941F30F21FADB18007F7FE3 /* Assets.xcassets */; };
+		3941F35721FADB18007F7FE3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3941F31021FADB18007F7FE3 /* LaunchScreen.storyboard */; };
+		3941F35821FADB18007F7FE3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3941F31221FADB18007F7FE3 /* Main.storyboard */; };
+		3941F37F21FADD4F007F7FE3 /* tts_8.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3941F36D21FADD4E007F7FE3 /* tts_8.mp3 */; };
+		3941F38021FADD4F007F7FE3 /* tts_ten.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3941F36E21FADD4E007F7FE3 /* tts_ten.mp3 */; };
+		3941F38121FADD4F007F7FE3 /* tts_9.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3941F36F21FADD4E007F7FE3 /* tts_9.mp3 */; };
+		3941F38221FADD4F007F7FE3 /* tts_yuan.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3941F37021FADD4E007F7FE3 /* tts_yuan.mp3 */; };
+		3941F38321FADD4F007F7FE3 /* tts_dot.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3941F37121FADD4E007F7FE3 /* tts_dot.mp3 */; };
+		3941F38421FADD4F007F7FE3 /* tts_pre.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3941F37221FADD4E007F7FE3 /* tts_pre.mp3 */; };
+		3941F38521FADD4F007F7FE3 /* tts_default.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3941F37321FADD4E007F7FE3 /* tts_default.mp3 */; };
+		3941F38621FADD4F007F7FE3 /* tts_thousand.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3941F37421FADD4E007F7FE3 /* tts_thousand.mp3 */; };
+		3941F38721FADD4F007F7FE3 /* tts_hundred.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3941F37521FADD4E007F7FE3 /* tts_hundred.mp3 */; };
+		3941F38821FADD4F007F7FE3 /* tts_ten_thousand.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3941F37621FADD4E007F7FE3 /* tts_ten_thousand.mp3 */; };
+		3941F38921FADD4F007F7FE3 /* tts_2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3941F37721FADD4E007F7FE3 /* tts_2.mp3 */; };
+		3941F38A21FADD4F007F7FE3 /* tts_3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3941F37821FADD4E007F7FE3 /* tts_3.mp3 */; };
+		3941F38B21FADD4F007F7FE3 /* tts_1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3941F37921FADD4E007F7FE3 /* tts_1.mp3 */; };
+		3941F38C21FADD4F007F7FE3 /* tts_0.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3941F37A21FADD4E007F7FE3 /* tts_0.mp3 */; };
+		3941F38D21FADD4F007F7FE3 /* tts_4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3941F37B21FADD4E007F7FE3 /* tts_4.mp3 */; };
+		3941F38E21FADD4F007F7FE3 /* tts_5.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3941F37C21FADD4E007F7FE3 /* tts_5.mp3 */; };
+		3941F38F21FADD4F007F7FE3 /* tts_7.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3941F37D21FADD4E007F7FE3 /* tts_7.mp3 */; };
+		3941F39021FADD4F007F7FE3 /* tts_6.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3941F37E21FADD4E007F7FE3 /* tts_6.mp3 */; };
+		3941F39521FAED88007F7FE3 /* YJAudioTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3941F39421FAED88007F7FE3 /* YJAudioTool.m */; };
+		3941F39921FAEEDD007F7FE3 /* NSDictionary+YJDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 3941F39821FAEEDD007F7FE3 /* NSDictionary+YJDictionary.m */; };
+		3941F39C21FAF11D007F7FE3 /* NSString+YJString.m in Sources */ = {isa = PBXBuildFile; fileRef = 3941F39B21FAF11D007F7FE3 /* NSString+YJString.m */; };
+		3941F3A521FB0C1C007F7FE3 /* NotificationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 3941F3A421FB0C1C007F7FE3 /* NotificationService.m */; };
+		3941F3A921FB0C1C007F7FE3 /* YJNotificationServiceExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 3941F3A121FB0C1C007F7FE3 /* YJNotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		3941F3AE21FB0DA7007F7FE3 /* YJAudioTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3941F39421FAED88007F7FE3 /* YJAudioTool.m */; };
+		3941F3B021FB16CB007F7FE3 /* NSDictionary+YJDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 3941F39821FAEEDD007F7FE3 /* NSDictionary+YJDictionary.m */; };
+		3941F3B121FB16D1007F7FE3 /* NSString+YJString.m in Sources */ = {isa = PBXBuildFile; fileRef = 3941F39B21FAF11D007F7FE3 /* NSString+YJString.m */; };
+		64B558F6DDE32420B2F52115 /* Pods_VoiceBroadcastDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A327292B11870FA1EEA7DE5 /* Pods_VoiceBroadcastDemo.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3941F28721FAD839007F7FE3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3941F26621FAD838007F7FE3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3941F26D21FAD838007F7FE3;
+			remoteInfo = VoiceBroadcastDemo;
+		};
+		3941F29221FAD839007F7FE3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3941F26621FAD838007F7FE3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3941F26D21FAD838007F7FE3;
+			remoteInfo = VoiceBroadcastDemo;
+		};
+		3941F3A721FB0C1C007F7FE3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3941F26621FAD838007F7FE3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3941F3A021FB0C1C007F7FE3;
+			remoteInfo = YJNotificationServiceExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3941F3AD21FB0C1C007F7FE3 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				3941F3A921FB0C1C007F7FE3 /* YJNotificationServiceExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		0A327292B11870FA1EEA7DE5 /* Pods_VoiceBroadcastDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VoiceBroadcastDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3941F26E21FAD838007F7FE3 /* VoiceBroadcastDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VoiceBroadcastDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3941F28621FAD839007F7FE3 /* VoiceBroadcastDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VoiceBroadcastDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3941F28A21FAD839007F7FE3 /* VoiceBroadcastDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VoiceBroadcastDemoTests.m; sourceTree = "<group>"; };
+		3941F28C21FAD839007F7FE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3941F29121FAD839007F7FE3 /* VoiceBroadcastDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VoiceBroadcastDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3941F29521FAD839007F7FE3 /* VoiceBroadcastDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VoiceBroadcastDemoUITests.m; sourceTree = "<group>"; };
+		3941F29721FAD839007F7FE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3941F2BF21FADB18007F7FE3 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		3941F2C021FADB18007F7FE3 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3941F2C121FADB18007F7FE3 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		3941F2EE21FADB18007F7FE3 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		3941F2EF21FADB18007F7FE3 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		3941F30F21FADB18007F7FE3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3941F31121FADB18007F7FE3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3941F31321FADB18007F7FE3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3941F31421FADB18007F7FE3 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3941F36D21FADD4E007F7FE3 /* tts_8.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = tts_8.mp3; sourceTree = "<group>"; };
+		3941F36E21FADD4E007F7FE3 /* tts_ten.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = tts_ten.mp3; sourceTree = "<group>"; };
+		3941F36F21FADD4E007F7FE3 /* tts_9.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = tts_9.mp3; sourceTree = "<group>"; };
+		3941F37021FADD4E007F7FE3 /* tts_yuan.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = tts_yuan.mp3; sourceTree = "<group>"; };
+		3941F37121FADD4E007F7FE3 /* tts_dot.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = tts_dot.mp3; sourceTree = "<group>"; };
+		3941F37221FADD4E007F7FE3 /* tts_pre.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = tts_pre.mp3; sourceTree = "<group>"; };
+		3941F37321FADD4E007F7FE3 /* tts_default.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = tts_default.mp3; sourceTree = "<group>"; };
+		3941F37421FADD4E007F7FE3 /* tts_thousand.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = tts_thousand.mp3; sourceTree = "<group>"; };
+		3941F37521FADD4E007F7FE3 /* tts_hundred.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = tts_hundred.mp3; sourceTree = "<group>"; };
+		3941F37621FADD4E007F7FE3 /* tts_ten_thousand.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = tts_ten_thousand.mp3; sourceTree = "<group>"; };
+		3941F37721FADD4E007F7FE3 /* tts_2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = tts_2.mp3; sourceTree = "<group>"; };
+		3941F37821FADD4E007F7FE3 /* tts_3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = tts_3.mp3; sourceTree = "<group>"; };
+		3941F37921FADD4E007F7FE3 /* tts_1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = tts_1.mp3; sourceTree = "<group>"; };
+		3941F37A21FADD4E007F7FE3 /* tts_0.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = tts_0.mp3; sourceTree = "<group>"; };
+		3941F37B21FADD4E007F7FE3 /* tts_4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = tts_4.mp3; sourceTree = "<group>"; };
+		3941F37C21FADD4E007F7FE3 /* tts_5.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = tts_5.mp3; sourceTree = "<group>"; };
+		3941F37D21FADD4E007F7FE3 /* tts_7.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = tts_7.mp3; sourceTree = "<group>"; };
+		3941F37E21FADD4E007F7FE3 /* tts_6.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = tts_6.mp3; sourceTree = "<group>"; };
+		3941F39121FAE09E007F7FE3 /* VoiceBroadcastDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = VoiceBroadcastDemo.entitlements; sourceTree = "<group>"; };
+		3941F39321FAED88007F7FE3 /* YJAudioTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YJAudioTool.h; sourceTree = "<group>"; };
+		3941F39421FAED88007F7FE3 /* YJAudioTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YJAudioTool.m; sourceTree = "<group>"; };
+		3941F39721FAEEDD007F7FE3 /* NSDictionary+YJDictionary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+YJDictionary.h"; sourceTree = "<group>"; };
+		3941F39821FAEEDD007F7FE3 /* NSDictionary+YJDictionary.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+YJDictionary.m"; sourceTree = "<group>"; };
+		3941F39A21FAF11D007F7FE3 /* NSString+YJString.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+YJString.h"; sourceTree = "<group>"; };
+		3941F39B21FAF11D007F7FE3 /* NSString+YJString.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+YJString.m"; sourceTree = "<group>"; };
+		3941F3A121FB0C1C007F7FE3 /* YJNotificationServiceExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = YJNotificationServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		3941F3A321FB0C1C007F7FE3 /* NotificationService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationService.h; sourceTree = "<group>"; };
+		3941F3A421FB0C1C007F7FE3 /* NotificationService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationService.m; sourceTree = "<group>"; };
+		3941F3A621FB0C1C007F7FE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3941F3AF21FB1185007F7FE3 /* YJNotificationServiceExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = YJNotificationServiceExtension.entitlements; sourceTree = "<group>"; };
+		5019ACCB8CA81A3EB24772E1 /* Pods-VoiceBroadcastDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoiceBroadcastDemo.release.xcconfig"; path = "Target Support Files/Pods-VoiceBroadcastDemo/Pods-VoiceBroadcastDemo.release.xcconfig"; sourceTree = "<group>"; };
+		FD629B5BEF6D327B5C870B9F /* Pods-VoiceBroadcastDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoiceBroadcastDemo.debug.xcconfig"; path = "Target Support Files/Pods-VoiceBroadcastDemo/Pods-VoiceBroadcastDemo.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3941F26B21FAD838007F7FE3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				64B558F6DDE32420B2F52115 /* Pods_VoiceBroadcastDemo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3941F28321FAD839007F7FE3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3941F28E21FAD839007F7FE3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3941F39E21FB0C1C007F7FE3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3941F26521FAD838007F7FE3 = {
+			isa = PBXGroup;
+			children = (
+				3941F2BD21FADB18007F7FE3 /* VoiceBroadcastDemo */,
+				3941F28921FAD839007F7FE3 /* VoiceBroadcastDemoTests */,
+				3941F29421FAD839007F7FE3 /* VoiceBroadcastDemoUITests */,
+				3941F3A221FB0C1C007F7FE3 /* YJNotificationServiceExtension */,
+				3941F26F21FAD838007F7FE3 /* Products */,
+				9BB23A61CDE2602325D58337 /* Pods */,
+				F181AECCA1BBDCC0CE01F5CD /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		3941F26F21FAD838007F7FE3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3941F26E21FAD838007F7FE3 /* VoiceBroadcastDemo.app */,
+				3941F28621FAD839007F7FE3 /* VoiceBroadcastDemoTests.xctest */,
+				3941F29121FAD839007F7FE3 /* VoiceBroadcastDemoUITests.xctest */,
+				3941F3A121FB0C1C007F7FE3 /* YJNotificationServiceExtension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3941F28921FAD839007F7FE3 /* VoiceBroadcastDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				3941F28A21FAD839007F7FE3 /* VoiceBroadcastDemoTests.m */,
+				3941F28C21FAD839007F7FE3 /* Info.plist */,
+			);
+			path = VoiceBroadcastDemoTests;
+			sourceTree = "<group>";
+		};
+		3941F29421FAD839007F7FE3 /* VoiceBroadcastDemoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				3941F29521FAD839007F7FE3 /* VoiceBroadcastDemoUITests.m */,
+				3941F29721FAD839007F7FE3 /* Info.plist */,
+			);
+			path = VoiceBroadcastDemoUITests;
+			sourceTree = "<group>";
+		};
+		3941F2BD21FADB18007F7FE3 /* VoiceBroadcastDemo */ = {
+			isa = PBXGroup;
+			children = (
+				3941F39121FAE09E007F7FE3 /* VoiceBroadcastDemo.entitlements */,
+				3941F2BE21FADB18007F7FE3 /* App */,
+				3941F2CC21FADB18007F7FE3 /* Module */,
+				3941F30D21FADB18007F7FE3 /* Support Files */,
+				3941F31521FADB18007F7FE3 /* Utils */,
+				3941F33421FADB18007F7FE3 /* Resource */,
+			);
+			path = VoiceBroadcastDemo;
+			sourceTree = "<group>";
+		};
+		3941F2BE21FADB18007F7FE3 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				3941F2BF21FADB18007F7FE3 /* AppDelegate.h */,
+				3941F2C121FADB18007F7FE3 /* AppDelegate.m */,
+				3941F2C021FADB18007F7FE3 /* main.m */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		3941F2CC21FADB18007F7FE3 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				3941F2EB21FADB18007F7FE3 /* Test */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		3941F2EB21FADB18007F7FE3 /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				3941F2EC21FADB18007F7FE3 /* ViewModel */,
+				3941F2ED21FADB18007F7FE3 /* Controller */,
+				3941F2F021FADB18007F7FE3 /* Model */,
+				3941F2F121FADB18007F7FE3 /* View */,
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
+		3941F2EC21FADB18007F7FE3 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		3941F2ED21FADB18007F7FE3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3941F2EF21FADB18007F7FE3 /* ViewController.h */,
+				3941F2EE21FADB18007F7FE3 /* ViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		3941F2F021FADB18007F7FE3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3941F2F121FADB18007F7FE3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3941F30D21FADB18007F7FE3 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				3941F30F21FADB18007F7FE3 /* Assets.xcassets */,
+				3941F31421FADB18007F7FE3 /* Info.plist */,
+				3941F31021FADB18007F7FE3 /* LaunchScreen.storyboard */,
+				3941F31221FADB18007F7FE3 /* Main.storyboard */,
+			);
+			path = "Support Files";
+			sourceTree = "<group>";
+		};
+		3941F31521FADB18007F7FE3 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				3941F39621FAEEC6007F7FE3 /* Category */,
+				3941F39221FAED70007F7FE3 /* AudioTool */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		3941F33421FADB18007F7FE3 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				3941F36C21FADD4E007F7FE3 /* Audios */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		3941F36C21FADD4E007F7FE3 /* Audios */ = {
+			isa = PBXGroup;
+			children = (
+				3941F36D21FADD4E007F7FE3 /* tts_8.mp3 */,
+				3941F36E21FADD4E007F7FE3 /* tts_ten.mp3 */,
+				3941F36F21FADD4E007F7FE3 /* tts_9.mp3 */,
+				3941F37021FADD4E007F7FE3 /* tts_yuan.mp3 */,
+				3941F37121FADD4E007F7FE3 /* tts_dot.mp3 */,
+				3941F37221FADD4E007F7FE3 /* tts_pre.mp3 */,
+				3941F37321FADD4E007F7FE3 /* tts_default.mp3 */,
+				3941F37421FADD4E007F7FE3 /* tts_thousand.mp3 */,
+				3941F37521FADD4E007F7FE3 /* tts_hundred.mp3 */,
+				3941F37621FADD4E007F7FE3 /* tts_ten_thousand.mp3 */,
+				3941F37721FADD4E007F7FE3 /* tts_2.mp3 */,
+				3941F37821FADD4E007F7FE3 /* tts_3.mp3 */,
+				3941F37921FADD4E007F7FE3 /* tts_1.mp3 */,
+				3941F37A21FADD4E007F7FE3 /* tts_0.mp3 */,
+				3941F37B21FADD4E007F7FE3 /* tts_4.mp3 */,
+				3941F37C21FADD4E007F7FE3 /* tts_5.mp3 */,
+				3941F37D21FADD4E007F7FE3 /* tts_7.mp3 */,
+				3941F37E21FADD4E007F7FE3 /* tts_6.mp3 */,
+			);
+			path = Audios;
+			sourceTree = "<group>";
+		};
+		3941F39221FAED70007F7FE3 /* AudioTool */ = {
+			isa = PBXGroup;
+			children = (
+				3941F39321FAED88007F7FE3 /* YJAudioTool.h */,
+				3941F39421FAED88007F7FE3 /* YJAudioTool.m */,
+			);
+			path = AudioTool;
+			sourceTree = "<group>";
+		};
+		3941F39621FAEEC6007F7FE3 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				3941F39721FAEEDD007F7FE3 /* NSDictionary+YJDictionary.h */,
+				3941F39821FAEEDD007F7FE3 /* NSDictionary+YJDictionary.m */,
+				3941F39A21FAF11D007F7FE3 /* NSString+YJString.h */,
+				3941F39B21FAF11D007F7FE3 /* NSString+YJString.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		3941F3A221FB0C1C007F7FE3 /* YJNotificationServiceExtension */ = {
+			isa = PBXGroup;
+			children = (
+				3941F3AF21FB1185007F7FE3 /* YJNotificationServiceExtension.entitlements */,
+				3941F3A321FB0C1C007F7FE3 /* NotificationService.h */,
+				3941F3A421FB0C1C007F7FE3 /* NotificationService.m */,
+				3941F3A621FB0C1C007F7FE3 /* Info.plist */,
+			);
+			path = YJNotificationServiceExtension;
+			sourceTree = "<group>";
+		};
+		9BB23A61CDE2602325D58337 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FD629B5BEF6D327B5C870B9F /* Pods-VoiceBroadcastDemo.debug.xcconfig */,
+				5019ACCB8CA81A3EB24772E1 /* Pods-VoiceBroadcastDemo.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		F181AECCA1BBDCC0CE01F5CD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0A327292B11870FA1EEA7DE5 /* Pods_VoiceBroadcastDemo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3941F26D21FAD838007F7FE3 /* VoiceBroadcastDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3941F29A21FAD839007F7FE3 /* Build configuration list for PBXNativeTarget "VoiceBroadcastDemo" */;
+			buildPhases = (
+				97B121C763CE26D7C91AA8F1 /* [CP] Check Pods Manifest.lock */,
+				3941F26A21FAD838007F7FE3 /* Sources */,
+				3941F26B21FAD838007F7FE3 /* Frameworks */,
+				3941F26C21FAD838007F7FE3 /* Resources */,
+				3941F3AD21FB0C1C007F7FE3 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3941F3A821FB0C1C007F7FE3 /* PBXTargetDependency */,
+			);
+			name = VoiceBroadcastDemo;
+			productName = VoiceBroadcastDemo;
+			productReference = 3941F26E21FAD838007F7FE3 /* VoiceBroadcastDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3941F28521FAD839007F7FE3 /* VoiceBroadcastDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3941F29D21FAD839007F7FE3 /* Build configuration list for PBXNativeTarget "VoiceBroadcastDemoTests" */;
+			buildPhases = (
+				3941F28221FAD839007F7FE3 /* Sources */,
+				3941F28321FAD839007F7FE3 /* Frameworks */,
+				3941F28421FAD839007F7FE3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3941F28821FAD839007F7FE3 /* PBXTargetDependency */,
+			);
+			name = VoiceBroadcastDemoTests;
+			productName = VoiceBroadcastDemoTests;
+			productReference = 3941F28621FAD839007F7FE3 /* VoiceBroadcastDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		3941F29021FAD839007F7FE3 /* VoiceBroadcastDemoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3941F2A021FAD839007F7FE3 /* Build configuration list for PBXNativeTarget "VoiceBroadcastDemoUITests" */;
+			buildPhases = (
+				3941F28D21FAD839007F7FE3 /* Sources */,
+				3941F28E21FAD839007F7FE3 /* Frameworks */,
+				3941F28F21FAD839007F7FE3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3941F29321FAD839007F7FE3 /* PBXTargetDependency */,
+			);
+			name = VoiceBroadcastDemoUITests;
+			productName = VoiceBroadcastDemoUITests;
+			productReference = 3941F29121FAD839007F7FE3 /* VoiceBroadcastDemoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		3941F3A021FB0C1C007F7FE3 /* YJNotificationServiceExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3941F3AA21FB0C1C007F7FE3 /* Build configuration list for PBXNativeTarget "YJNotificationServiceExtension" */;
+			buildPhases = (
+				3941F39D21FB0C1C007F7FE3 /* Sources */,
+				3941F39E21FB0C1C007F7FE3 /* Frameworks */,
+				3941F39F21FB0C1C007F7FE3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = YJNotificationServiceExtension;
+			productName = YJNotificationServiceExtension;
+			productReference = 3941F3A121FB0C1C007F7FE3 /* YJNotificationServiceExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3941F26621FAD838007F7FE3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = YangJing;
+				TargetAttributes = {
+					3941F26D21FAD838007F7FE3 = {
+						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
+					};
+					3941F28521FAD839007F7FE3 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 3941F26D21FAD838007F7FE3;
+					};
+					3941F29021FAD839007F7FE3 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 3941F26D21FAD838007F7FE3;
+					};
+					3941F3A021FB0C1C007F7FE3 = {
+						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 0;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = 3941F26921FAD838007F7FE3 /* Build configuration list for PBXProject "VoiceBroadcastDemo" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3941F26521FAD838007F7FE3;
+			productRefGroup = 3941F26F21FAD838007F7FE3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3941F26D21FAD838007F7FE3 /* VoiceBroadcastDemo */,
+				3941F28521FAD839007F7FE3 /* VoiceBroadcastDemoTests */,
+				3941F29021FAD839007F7FE3 /* VoiceBroadcastDemoUITests */,
+				3941F3A021FB0C1C007F7FE3 /* YJNotificationServiceExtension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3941F26C21FAD838007F7FE3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3941F38021FADD4F007F7FE3 /* tts_ten.mp3 in Resources */,
+				3941F38821FADD4F007F7FE3 /* tts_ten_thousand.mp3 in Resources */,
+				3941F38B21FADD4F007F7FE3 /* tts_1.mp3 in Resources */,
+				3941F39021FADD4F007F7FE3 /* tts_6.mp3 in Resources */,
+				3941F38321FADD4F007F7FE3 /* tts_dot.mp3 in Resources */,
+				3941F38721FADD4F007F7FE3 /* tts_hundred.mp3 in Resources */,
+				3941F38C21FADD4F007F7FE3 /* tts_0.mp3 in Resources */,
+				3941F38621FADD4F007F7FE3 /* tts_thousand.mp3 in Resources */,
+				3941F35821FADB18007F7FE3 /* Main.storyboard in Resources */,
+				3941F38921FADD4F007F7FE3 /* tts_2.mp3 in Resources */,
+				3941F35621FADB18007F7FE3 /* Assets.xcassets in Resources */,
+				3941F35721FADB18007F7FE3 /* LaunchScreen.storyboard in Resources */,
+				3941F38A21FADD4F007F7FE3 /* tts_3.mp3 in Resources */,
+				3941F38221FADD4F007F7FE3 /* tts_yuan.mp3 in Resources */,
+				3941F38521FADD4F007F7FE3 /* tts_default.mp3 in Resources */,
+				3941F38121FADD4F007F7FE3 /* tts_9.mp3 in Resources */,
+				3941F38421FADD4F007F7FE3 /* tts_pre.mp3 in Resources */,
+				3941F38D21FADD4F007F7FE3 /* tts_4.mp3 in Resources */,
+				3941F38F21FADD4F007F7FE3 /* tts_7.mp3 in Resources */,
+				3941F38E21FADD4F007F7FE3 /* tts_5.mp3 in Resources */,
+				3941F37F21FADD4F007F7FE3 /* tts_8.mp3 in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3941F28421FAD839007F7FE3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3941F28F21FAD839007F7FE3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3941F39F21FB0C1C007F7FE3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		97B121C763CE26D7C91AA8F1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VoiceBroadcastDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3941F26A21FAD838007F7FE3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3941F34F21FADB18007F7FE3 /* ViewController.m in Sources */,
+				3941F39C21FAF11D007F7FE3 /* NSString+YJString.m in Sources */,
+				3941F34021FADB18007F7FE3 /* AppDelegate.m in Sources */,
+				3941F39921FAEEDD007F7FE3 /* NSDictionary+YJDictionary.m in Sources */,
+				3941F33F21FADB18007F7FE3 /* main.m in Sources */,
+				3941F39521FAED88007F7FE3 /* YJAudioTool.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3941F28221FAD839007F7FE3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3941F28B21FAD839007F7FE3 /* VoiceBroadcastDemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3941F28D21FAD839007F7FE3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3941F29621FAD839007F7FE3 /* VoiceBroadcastDemoUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3941F39D21FB0C1C007F7FE3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3941F3B121FB16D1007F7FE3 /* NSString+YJString.m in Sources */,
+				3941F3B021FB16CB007F7FE3 /* NSDictionary+YJDictionary.m in Sources */,
+				3941F3AE21FB0DA7007F7FE3 /* YJAudioTool.m in Sources */,
+				3941F3A521FB0C1C007F7FE3 /* NotificationService.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3941F28821FAD839007F7FE3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3941F26D21FAD838007F7FE3 /* VoiceBroadcastDemo */;
+			targetProxy = 3941F28721FAD839007F7FE3 /* PBXContainerItemProxy */;
+		};
+		3941F29321FAD839007F7FE3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3941F26D21FAD838007F7FE3 /* VoiceBroadcastDemo */;
+			targetProxy = 3941F29221FAD839007F7FE3 /* PBXContainerItemProxy */;
+		};
+		3941F3A821FB0C1C007F7FE3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3941F3A021FB0C1C007F7FE3 /* YJNotificationServiceExtension */;
+			targetProxy = 3941F3A721FB0C1C007F7FE3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3941F31021FADB18007F7FE3 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3941F31121FADB18007F7FE3 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		3941F31221FADB18007F7FE3 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3941F31321FADB18007F7FE3 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3941F29821FAD839007F7FE3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		3941F29921FAD839007F7FE3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3941F29B21FAD839007F7FE3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FD629B5BEF6D327B5C870B9F /* Pods-VoiceBroadcastDemo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = VoiceBroadcastDemo/VoiceBroadcastDemo.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 475L2MZD72;
+				GCC_PREFIX_HEADER = "";
+				INFOPLIST_FILE = "$(SRCROOT)/VoiceBroadcastDemo/Support Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.info.wordoor;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		3941F29C21FAD839007F7FE3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5019ACCB8CA81A3EB24772E1 /* Pods-VoiceBroadcastDemo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = VoiceBroadcastDemo/VoiceBroadcastDemo.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 475L2MZD72;
+				GCC_PREFIX_HEADER = "";
+				INFOPLIST_FILE = "$(SRCROOT)/VoiceBroadcastDemo/Support Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.info.wordoor;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		3941F29E21FAD839007F7FE3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 475L2MZD72;
+				INFOPLIST_FILE = VoiceBroadcastDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = yangjing.VoiceBroadcastDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VoiceBroadcastDemo.app/VoiceBroadcastDemo";
+			};
+			name = Debug;
+		};
+		3941F29F21FAD839007F7FE3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 475L2MZD72;
+				INFOPLIST_FILE = VoiceBroadcastDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = yangjing.VoiceBroadcastDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VoiceBroadcastDemo.app/VoiceBroadcastDemo";
+			};
+			name = Release;
+		};
+		3941F2A121FAD839007F7FE3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 475L2MZD72;
+				INFOPLIST_FILE = VoiceBroadcastDemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = yangjing.VoiceBroadcastDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = VoiceBroadcastDemo;
+			};
+			name = Debug;
+		};
+		3941F2A221FAD839007F7FE3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 475L2MZD72;
+				INFOPLIST_FILE = VoiceBroadcastDemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = yangjing.VoiceBroadcastDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = VoiceBroadcastDemo;
+			};
+			name = Release;
+		};
+		3941F3AB21FB0C1C007F7FE3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 475L2MZD72;
+				INFOPLIST_FILE = YJNotificationServiceExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.info.wordoor.YJNotificationServiceExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3941F3AC21FB0C1C007F7FE3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 475L2MZD72;
+				INFOPLIST_FILE = YJNotificationServiceExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.info.wordoor.YJNotificationServiceExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3941F26921FAD838007F7FE3 /* Build configuration list for PBXProject "VoiceBroadcastDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3941F29821FAD839007F7FE3 /* Debug */,
+				3941F29921FAD839007F7FE3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3941F29A21FAD839007F7FE3 /* Build configuration list for PBXNativeTarget "VoiceBroadcastDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3941F29B21FAD839007F7FE3 /* Debug */,
+				3941F29C21FAD839007F7FE3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3941F29D21FAD839007F7FE3 /* Build configuration list for PBXNativeTarget "VoiceBroadcastDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3941F29E21FAD839007F7FE3 /* Debug */,
+				3941F29F21FAD839007F7FE3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3941F2A021FAD839007F7FE3 /* Build configuration list for PBXNativeTarget "VoiceBroadcastDemoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3941F2A121FAD839007F7FE3 /* Debug */,
+				3941F2A221FAD839007F7FE3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3941F3AA21FB0C1C007F7FE3 /* Build configuration list for PBXNativeTarget "YJNotificationServiceExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3941F3AB21FB0C1C007F7FE3 /* Debug */,
+				3941F3AC21FB0C1C007F7FE3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3941F26621FAD838007F7FE3 /* Project object */;
+}
