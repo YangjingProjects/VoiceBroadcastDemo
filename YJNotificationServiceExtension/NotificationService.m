@@ -29,11 +29,11 @@
 //    self.bestAttemptContent.sound = nil;
     NSLog(@"yangjing_%@: dict->%@", NSStringFromClass([self class]), dict);
 
-    [[YJAudioTool sharedPlayer] playPushInfo:dict completed:^(BOOL success) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            self.contentHandler(self.bestAttemptContent);
-        });
-    }];
+//    [[YJAudioTool sharedPlayer] playPushInfo:dict completed:^(BOOL success) {
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//            self.contentHandler(self.bestAttemptContent);
+//        });
+//    }];
 }
 
 - (void)serviceExtensionTimeWillExpire {

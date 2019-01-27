@@ -243,19 +243,9 @@
 		3941F2EB21FADB18007F7FE3 /* Test */ = {
 			isa = PBXGroup;
 			children = (
-				3941F2EC21FADB18007F7FE3 /* ViewModel */,
 				3941F2ED21FADB18007F7FE3 /* Controller */,
-				3941F2F021FADB18007F7FE3 /* Model */,
-				3941F2F121FADB18007F7FE3 /* View */,
 			);
 			path = Test;
-			sourceTree = "<group>";
-		};
-		3941F2EC21FADB18007F7FE3 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		3941F2ED21FADB18007F7FE3 /* Controller */ = {
@@ -265,20 +255,6 @@
 				3941F2EE21FADB18007F7FE3 /* ViewController.m */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		3941F2F021FADB18007F7FE3 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		3941F2F121FADB18007F7FE3 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		3941F30D21FADB18007F7FE3 /* Support Files */ = {
@@ -794,7 +770,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = VoiceBroadcastDemo/VoiceBroadcastDemo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 475L2MZD72;
+				DEVELOPMENT_TEAM = U7S6VUPM23;
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = "$(SRCROOT)/VoiceBroadcastDemo/Support Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -802,7 +778,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.info.wordoor;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yangjing.apns;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -815,7 +791,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = VoiceBroadcastDemo/VoiceBroadcastDemo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 475L2MZD72;
+				DEVELOPMENT_TEAM = U7S6VUPM23;
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = "$(SRCROOT)/VoiceBroadcastDemo/Support Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -823,7 +799,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.info.wordoor;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yangjing.apns;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -907,14 +883,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 475L2MZD72;
+				DEVELOPMENT_TEAM = U7S6VUPM23;
 				INFOPLIST_FILE = YJNotificationServiceExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.info.wordoor.YJNotificationServiceExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yangjing.apns.YJNotificationServiceExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -925,14 +901,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 475L2MZD72;
+				DEVELOPMENT_TEAM = U7S6VUPM23;
 				INFOPLIST_FILE = YJNotificationServiceExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.info.wordoor.YJNotificationServiceExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yangjing.apns.YJNotificationServiceExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
