@@ -10,8 +10,7 @@
 #import <UserNotifications/UserNotifications.h>
 #import "YJAudioTool.h"
 #import <PushKit/PushKit.h>
-
-#define IOS10 @available(iOS 10.0, *)
+#import "YJMacro.h"
 
 @interface AppDelegate () <UNUserNotificationCenterDelegate>
 
@@ -21,21 +20,18 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    if (@available(iOS 10.0, *)) {
-        // iOS10及以上注册远程通知的方法
+    if (yjIOS10) {
+        //通知授权
         UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
-        // 必须写代理，不然无法监听通知的接收与点击
         center.delegate = self;
         [center requestAuthorizationWithOptions:UNAuthorizationOptionAlert | UNAuthorizationOptionBadge | UNAuthorizationOptionSound completionHandler:^(BOOL granted, NSError * _Nullable error) {
             if (granted) {
                 // 点击允许
-                NSLog(@"注册成功");
                 [center getNotificationSettingsWithCompletionHandler:^(UNNotificationSettings * _Nonnull settings) {
-                    NSLog(@"%@", settings);
+                    NSLog(@"yangjing_%@: settings->%@", NSStringFromClass([self class]),settings);
                 }];
             } else {
                 // 点击不允许
-                NSLog(@"注册失败");
                 
             }
         }];
@@ -98,59 +94,59 @@
     
 }
 
+//ios10之前接收远程推送
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
     NSLog(@"yangjing_%@: userInfo->%@ ", NSStringFromClass([self class]), userInfo);
     
     [[YJAudioTool sharedPlayer] playPushInfo:userInfo completed:nil];
 }
 
-// 本地推送
+//ios10之前接收本地推送
 - (void)application:(UIApplication *)app didReceiveLocalNotification:(UILocalNotification *)notif {
 }
 
+//ios10之后接收推送
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler  API_AVAILABLE(ios(10.0)){
+    
     NSDictionary * userInfo = notification.request.content.userInfo;
     
+    //远程推送
     if([notification.request.trigger isKindOfClass:[UNPushNotificationTrigger class]]) {
         NSLog(@"yangjing_%@: userInfo->%@ ", NSStringFromClass([self class]), userInfo);
         
+        //未经过NotificationService处理
         if (![userInfo.allKeys containsObject:@"hasHandled"]) {
-            [[YJAudioTool sharedPlayer] playPushInfo:userInfo completed:nil];
-            completionHandler(UNNotificationPresentationOptionBadge|UNNotificationPresentationOptionAlert); // 需要执行这个方法，选择是否提醒用户，有Badge、Sound、Alert三种类型可以设置
+            if ([UIApplication sharedApplication].applicationState == UIApplicationStateActive) {
+                [[YJAudioTool sharedPlayer] playPushInfo:userInfo completed:nil];
+                completionHandler(UNNotificationPresentationOptionNone);
+                
+            } else {
+                completionHandler(UNNotificationPresentationOptionBadge|UNNotificationPresentationOptionAlert|UNNotificationPresentationOptionSound);
+
+            }
             
         } else {
-            completionHandler(UNNotificationPresentationOptionBadge|UNNotificationPresentationOptionAlert); // 需要执行这个方法，选择是否提醒用户，有Badge、Sound、Alert三种类型可以设置
+            if ([UIApplication sharedApplication].applicationState == UIApplicationStateActive) {
+                completionHandler(UNNotificationPresentationOptionNone);
+                
+            } else {
+                completionHandler(UNNotificationPresentationOptionBadge|UNNotificationPresentationOptionAlert);
+                
+            }
 
         }
 
-
     }
+    
+    //远程推送
     else {
-        // 判断为本地通知
-        completionHandler(UNNotificationPresentationOptionBadge|UNNotificationPresentationOptionAlert|UNAuthorizationOptionSound); // 需要执行这个方法，选择是否提醒用户，有Badge、Sound、Alert三种类型可以设置
+        completionHandler(UNNotificationPresentationOptionBadge|UNNotificationPresentationOptionAlert|UNAuthorizationOptionSound);
 
     }
 }
 
-// （4）iOS10及以上通知的点击事件
+// iOS10及以上通知的点击事件
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)(void))completionHandler  API_AVAILABLE(ios(10.0)) {
-    NSDictionary * userInfo = response.notification.request.content.userInfo;
-    UNNotificationRequest *request = response.notification.request; // 收到推送的请求
-    UNNotificationContent *content = request.content; // 收到推送的消息内容
-    NSNumber *badge = content.badge;  // 推送消息的角标
-    NSString *body = content.body;    // 推送消息体
-    UNNotificationSound *sound = content.sound;  // 推送消息的声音
-    NSString *subtitle = content.subtitle;  // 推送消息的副标题
-    NSString *title = content.title;  // 推送消息的标题
-    if([response.notification.request.trigger isKindOfClass:[UNPushNotificationTrigger class]]) {
-        NSLog(@"iOS10 收到远程通知");
-        
-    } else {
-        // 判断为本地通知
-        NSLog(@"iOS10 收到本地通知:{\\\\nbody:%@，\\\\ntitle:%@,\\\\nsubtitle:%@,\\\\nbadge：%@，\\\\nsound：%@，\\\\nuserInfo：%@\\\\n}",body,title,subtitle,badge,sound,userInfo);
-    }
-    
-    // Warning: UNUserNotificationCenter delegate received call to -userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler: but the completion handler was never called.
     completionHandler();  // 系统要求执行这个方法
 }
 

@@ -8,8 +8,11 @@
 
 #import "YJAudioTool.h"
 #import <AVFoundation/AVFoundation.h>
+#import <UserNotifications/UserNotifications.h>
+
 #import "NSDictionary+YJDictionary.h"
 #import "NSString+YJString.h"
+#import "YJMacro.h"
 
 @interface YJAudioTool () <AVAudioPlayerDelegate>
 
@@ -85,10 +88,73 @@
     [self.audioFiles addObject:subAudioFiles];
     
     if (self.subIndex <= 0) {
-        [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:NULL];
-        [[AVAudioSession sharedInstance] setActive:YES error:NULL];
+        if (yjIOS12_1) {
+            [self addLocalNotices];
+            
+        } else {
+            [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:NULL];
+            [[AVAudioSession sharedInstance] setActive:YES error:NULL];
+            
+            [self playAudioFiles];
+        }
+    }
+}
+
+//本地推送
+- (void)addLocalNotices {
+    if (yjIOS10) {
+        if (self.currentIndex >= self.audioFiles.count) return;
         
-        [self playAudioFiles];
+        NSMutableArray *subAudioFiles = [self.audioFiles objectAtIndex:self.currentIndex];
+        
+        if (self.subIndex >= subAudioFiles.count) return;
+        
+//        dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
+        
+        NSString *fileName = [subAudioFiles objectAtIndex:self.subIndex] ;
+        NSLog(@"yangjing_%@: index->%ld fileName->%@", NSStringFromClass([self class]),(long)self.subIndex ,fileName);
+        
+        UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
+        UNMutableNotificationContent *content = [[UNMutableNotificationContent alloc] init];
+        content.title = @"";
+        content.subtitle = @"";
+        content.body = @"";
+        content.sound = [UNNotificationSound soundNamed:fileName];
+        content.badge = @(1);
+        UNTimeIntervalNotificationTrigger *trigger = [UNTimeIntervalNotificationTrigger triggerWithTimeInterval:0.01 repeats:NO];
+        // 添加通知的标识符，可以用于移除，更新等操作
+        NSString *identifier = [NSString stringWithFormat:@"localPushId%lld", (long long)[[NSDate date] timeIntervalSince1970]];
+        UNNotificationRequest *request = [UNNotificationRequest requestWithIdentifier:identifier content:content trigger:trigger];
+        [center addNotificationRequest:request withCompletionHandler:^(NSError *_Nullable error) {
+            CGFloat waitTime = [self timeForAudioFileWithFileName:fileName];
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(waitTime * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [self localNotificationPushNextFile];
+            });
+        }];
+    }
+}
+
+- (void)localNotificationPushNextFile {
+    
+    if (self.currentIndex >= self.audioFiles.count) return;
+    NSMutableArray *subAudioFiles = [self.audioFiles objectAtIndex:self.currentIndex];
+    
+    if (self.subIndex < subAudioFiles.count-1) {
+        self.subIndex += 1;
+        [self addLocalNotices];
+        
+    } else if (self.subIndex == subAudioFiles.count-1 && self.currentIndex < self.audioFiles.count-1) {
+        self.subIndex = 0;
+        self.currentIndex += 1;
+        [self addLocalNotices];
+        
+    } else {
+        self.subIndex = 0;
+        self.currentIndex = 0;
+        
+        [self.audioFiles removeAllObjects];
+        
+        if (self.completed) self.completed(YES);
     }
 }
 
@@ -110,54 +176,6 @@
     }
     NSLog(@"yangjing_%@: filePath->%@", NSStringFromClass([self class]), filePath);
 
-    NSData *data = [NSData dataWithContentsOfURL:fileURL];
-    if (!data) {
-        NSLog(@"yangjing_%@: data is nil", NSStringFromClass([self class]));
-        
-        //发送本地通知
-//        if (@available(iOS 10.0, *)) {
-//            NSLog(@"yangjing_%@: UNMutableNotificationContent", NSStringFromClass([self class]));
-
-//            // 1.创建通知内容
-//            UNMutableNotificationContent *content = [[UNMutableNotificationContent alloc] init];
-//            content.sound = [UNNotificationSound soundNamed:fileName];
-//            content.title = @"BKS通知";
-//            content.subtitle = @"收款通知";
-//            content.body = @"收款";
-//            content.badge = @(0);
-//
-//            content.userInfo = @{@"id":@"LOCAL_NOTIFY_SCHEDULE_ID"};
-            
-            // 2.设置通知附件内容
-//            NSError *error = nil;
-//            NSString *path = [NSString stringWithFormat:@"%@/%@", [[NSBundle mainBundle] resourcePath], @"logo.png"];
-//            UNNotificationAttachment *att = [UNNotificationAttachment attachmentWithIdentifier:@"att1" URL:[NSURL fileURLWithPath:path] options:nil error:&error];
-//            if (error) {
-//                NSLog(@"attachment error %@", error);
-//            }
-//            content.attachments = @[att];
-//            content.launchImageName = @"logo";
-//            // 2.设置声音
-//            UNNotificationSound *sound = [UNNotificationSound soundNamed:fileName];// [UNNotificationSound defaultSound];
-//            content.sound = sound;
-//
-//            // 3.触发模式
-//            UNTimeIntervalNotificationTrigger *trigger = [UNTimeIntervalNotificationTrigger triggerWithTimeInterval:0 repeats:NO];
-//
-//            // 4.设置UNNotificationRequest
-//            UNNotificationRequest *request = [UNNotificationRequest requestWithIdentifier:@"att12" content:content trigger:trigger];
-//
-//            // 5.把通知加到UNUserNotificationCenter, 到指定触发点会被触发
-//            [[UNUserNotificationCenter currentNotificationCenter] addNotificationRequest:request withCompletionHandler:^(NSError * _Nullable error) {
-//                NSLog(@"yangjing_%@: UNMutableNotificationContent Completion error->%@", NSStringFromClass([self class]), error ? @"yes" : @"no");
-//
-//            }];
-//
-//        }
-//
-//        return;
-    }
-    
     NSError *error = nil;
     self.audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:fileURL error:&error];
     if (error) {
@@ -195,6 +213,7 @@
 
 - (void)audioPlayerPlayNextFile {
     if (self.currentIndex >= self.audioFiles.count) return;
+    
     NSMutableArray *subAudioFiles = [self.audioFiles objectAtIndex:self.currentIndex];
     
     if (self.subIndex < subAudioFiles.count-1) {
@@ -245,6 +264,27 @@
     if([fileName isEqualToString:@"万"]) return @"tts_ten_thousand.mp3";
     if([fileName isEqualToString:@"点"]) return @"tts_dot.mp3";
     return nil;
+}
+
+- (CGFloat)timeForAudioFileWithFileName:(NSString *)fileName {
+    if([fileName isEqualToString:@"tts_0.mp3"]) return 0.7;
+    if([fileName isEqualToString:@"tts_1.mp3"]) return 0.7;
+    if([fileName isEqualToString:@"tts_2.mp3"]) return 0.7;
+    if([fileName isEqualToString:@"tts_3.mp3"]) return 0.7;
+    if([fileName isEqualToString:@"tts_4.mp3"]) return 0.7;
+    if([fileName isEqualToString:@"tts_5.mp3"]) return 0.7;
+    if([fileName isEqualToString:@"tts_6.mp3"]) return 0.7;
+    if([fileName isEqualToString:@"tts_7.mp3"]) return 0.7;
+    if([fileName isEqualToString:@"tts_8.mp3"]) return 0.7;
+    if([fileName isEqualToString:@"tts_9.mp3"]) return 0.7;
+    if([fileName isEqualToString:@"tts_ten.mp3"]) return 0.7;
+    if([fileName isEqualToString:@"tts_hundred.mp3"]) return 0.7;
+    if([fileName isEqualToString:@"tts_thousand.mp3"]) return 0.7;
+    if([fileName isEqualToString:@"tts_ten_thousand.mp3"]) return 0.7;
+    if([fileName isEqualToString:@"tts_dot.mp3"]) return 0.7;
+    if([fileName isEqualToString:@"tts_pre.mp3"]) return 2;
+    if([fileName isEqualToString:@"tts_yuan.mp3"]) return 0.7;
+    return 0.7;
 }
 
 - (NSMutableArray *)audioFiles {

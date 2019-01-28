@@ -60,6 +60,7 @@
 		39F864B721FEBC67001C4E80 /* tts_6.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 39F8649321FEBC42001C4E80 /* tts_6.mp3 */; };
 		39F864BB21FEBCE9001C4E80 /* YJAudioTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 39F864BA21FEBCE9001C4E80 /* YJAudioTool.m */; };
 		39F864BC21FEBD03001C4E80 /* YJAudioTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 39F864BA21FEBCE9001C4E80 /* YJAudioTool.m */; };
+		39F864C121FED17F001C4E80 /* YJMacro.h in Sources */ = {isa = PBXBuildFile; fileRef = 39F864BF21FECE8E001C4E80 /* YJMacro.h */; };
 		64B558F6DDE32420B2F52115 /* Pods_VoiceBroadcastDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A327292B11870FA1EEA7DE5 /* Pods_VoiceBroadcastDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -152,6 +153,7 @@
 		39F864B921FEBCE9001C4E80 /* YJAudioTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJAudioTool.h; sourceTree = "<group>"; };
 		39F864BA21FEBCE9001C4E80 /* YJAudioTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJAudioTool.m; sourceTree = "<group>"; };
 		39F864BD21FEBDD5001C4E80 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		39F864BF21FECE8E001C4E80 /* YJMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YJMacro.h; sourceTree = "<group>"; };
 		5019ACCB8CA81A3EB24772E1 /* Pods-VoiceBroadcastDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoiceBroadcastDemo.release.xcconfig"; path = "Target Support Files/Pods-VoiceBroadcastDemo/Pods-VoiceBroadcastDemo.release.xcconfig"; sourceTree = "<group>"; };
 		FD629B5BEF6D327B5C870B9F /* Pods-VoiceBroadcastDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoiceBroadcastDemo.debug.xcconfig"; path = "Target Support Files/Pods-VoiceBroadcastDemo/Pods-VoiceBroadcastDemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -250,6 +252,7 @@
 				3941F2BF21FADB18007F7FE3 /* AppDelegate.h */,
 				3941F2C121FADB18007F7FE3 /* AppDelegate.m */,
 				3941F2C021FADB18007F7FE3 /* main.m */,
+				39F864BF21FECE8E001C4E80 /* YJMacro.h */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -650,6 +653,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39F864C121FED17F001C4E80 /* YJMacro.h in Sources */,
 				3941F3B121FB16D1007F7FE3 /* NSString+YJString.m in Sources */,
 				3941F3B021FB16CB007F7FE3 /* NSDictionary+YJDictionary.m in Sources */,
 				3941F3A521FB0C1C007F7FE3 /* NotificationService.m in Sources */,
@@ -819,7 +823,7 @@
 				DEVELOPMENT_TEAM = U7S6VUPM23;
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = "$(SRCROOT)/VoiceBroadcastDemo/Support Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -840,7 +844,7 @@
 				DEVELOPMENT_TEAM = U7S6VUPM23;
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = "$(SRCROOT)/VoiceBroadcastDemo/Support Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
