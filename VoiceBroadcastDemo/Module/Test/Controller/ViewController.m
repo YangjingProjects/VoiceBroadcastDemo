@@ -20,20 +20,10 @@
 
 @implementation ViewController {
     NSString * _url;
-    NSString * _title;
-    BOOL _flag;
-}
-
-- (instancetype)init {
-    self = [super init];
-    if (self) {
-    }
-    return self;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _url = @"http://manage.suanlimao.net";
 
     [self addSubViews];
 }
@@ -41,9 +31,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    if (_flag) return;
-    _flag = YES;
-    NSURLRequest * request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString: _url]  cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:10];
+    NSURLRequest * request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://manage.suanlimao.net"] cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:10];
     [self.webview loadRequest:request];
 }
 

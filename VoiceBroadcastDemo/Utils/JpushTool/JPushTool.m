@@ -99,7 +99,7 @@
 
             if ([UIApplication sharedApplication].applicationState == UIApplicationStateActive) {
                 [[YJAudioTool sharedPlayer] playPushInfo:userInfo backModes:NO completed:nil];
-                completionHandler(UNNotificationPresentationOptionNone);
+                completionHandler(UNNotificationPresentationOptionAlert);
                 
             } else {
                 completionHandler(UNNotificationPresentationOptionBadge|UNNotificationPresentationOptionAlert|UNNotificationPresentationOptionSound);
@@ -108,7 +108,7 @@
             
         } else {
             if ([UIApplication sharedApplication].applicationState == UIApplicationStateActive) {
-                completionHandler(UNNotificationPresentationOptionNone);
+                completionHandler(UNNotificationPresentationOptionAlert);
                 
             } else {
                 completionHandler(UNNotificationPresentationOptionBadge|UNNotificationPresentationOptionAlert);
