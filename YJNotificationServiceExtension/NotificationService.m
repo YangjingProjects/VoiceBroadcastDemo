@@ -33,20 +33,6 @@
     [[YJAudioTool sharedPlayer] playPushInfo:weakSelf.bestAttemptContent.userInfo completed:^(BOOL success) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
         if (strongSelf) {
-//            if (yjIOS12_1 && 0) {
-//                NSMutableDictionary *dict = [strongSelf.bestAttemptContent.userInfo mutableCopy] ;
-//                [dict setObject:[NSNumber numberWithBool:YES] forKey:@"hasHandled"] ;
-//                strongSelf.bestAttemptContent.userInfo = dict;
-//
-//                strongSelf.contentHandler(self.bestAttemptContent);
-//
-//            } else {
-//                NSMutableDictionary *dict = [strongSelf.bestAttemptContent.userInfo mutableCopy] ;
-//                [dict setObject:[NSNumber numberWithBool:YES] forKey:@"hasHandled"] ;
-//                strongSelf.bestAttemptContent.userInfo = dict;
-//
-//                strongSelf.contentHandler(self.bestAttemptContent);
-//            }
             NSMutableDictionary *dict = [strongSelf.bestAttemptContent.userInfo mutableCopy] ;
             [dict setObject:[NSNumber numberWithBool:YES] forKey:@"hasHandled"] ;
             strongSelf.bestAttemptContent.userInfo = dict;
@@ -54,7 +40,6 @@
             strongSelf.contentHandler(self.bestAttemptContent);
         }
     }];
-
 }
 
 - (void)serviceExtensionTimeWillExpire {
