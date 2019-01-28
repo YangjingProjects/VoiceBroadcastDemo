@@ -220,7 +220,7 @@
         self.subIndex += 1;
         [self playAudioFiles];
         
-    } else if (self.subIndex == subAudioFiles.count-1) {
+    } else if (self.subIndex == subAudioFiles.count-1 && self.currentIndex < self.audioFiles.count-1) {
         self.subIndex = 0;
         self.currentIndex += 1;
         [self playAudioFiles];
