@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import <UserNotifications/UserNotifications.h>
 #import "YJAudioTool.h"
+#import <PushKit/PushKit.h>
 
 #define IOS10 @available(iOS 10.0, *)
 
@@ -17,7 +18,6 @@
 @end
 
 @implementation AppDelegate
-
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
@@ -114,8 +114,15 @@
     if([notification.request.trigger isKindOfClass:[UNPushNotificationTrigger class]]) {
         NSLog(@"yangjing_%@: userInfo->%@ ", NSStringFromClass([self class]), userInfo);
         
-        [[YJAudioTool sharedPlayer] playPushInfo:userInfo completed:nil];
-        completionHandler(UNNotificationPresentationOptionBadge|UNNotificationPresentationOptionAlert); // 需要执行这个方法，选择是否提醒用户，有Badge、Sound、Alert三种类型可以设置
+        if (![userInfo.allKeys containsObject:@"hasHandled"]) {
+            [[YJAudioTool sharedPlayer] playPushInfo:userInfo completed:nil];
+            completionHandler(UNNotificationPresentationOptionBadge|UNNotificationPresentationOptionAlert); // 需要执行这个方法，选择是否提醒用户，有Badge、Sound、Alert三种类型可以设置
+            
+        } else {
+            completionHandler(UNNotificationPresentationOptionBadge|UNNotificationPresentationOptionAlert); // 需要执行这个方法，选择是否提醒用户，有Badge、Sound、Alert三种类型可以设置
+
+        }
+
 
     }
     else {

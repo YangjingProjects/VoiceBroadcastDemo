@@ -21,6 +21,8 @@
 
 @property (nonatomic, assign) NSInteger subIndex;
 
+@property(nonatomic, copy) YJCompleteBlock completed ;
+
 @end
 
 @implementation YJAudioTool
@@ -57,6 +59,8 @@
 
 
 - (void)playMoneyReceived:(double)amount completed:(YJCompleteBlock)completed {
+    self.completed = completed ;
+
     // 将金额转换为对应的文字
     NSString *amountString = [NSString stringFromNumber:amount] ;
     NSLog(@"yangjing_%@: amountString->%@", NSStringFromClass([self class]), amountString);
@@ -80,12 +84,12 @@
 
     [self.audioFiles addObject:subAudioFiles];
     
-    if (self.subIndex > 0) return;
-    
-    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:NULL];
-    [[AVAudioSession sharedInstance] setActive:YES error:NULL];
-    
-    [self playAudioFiles];
+    if (self.subIndex <= 0) {
+        [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:NULL];
+        [[AVAudioSession sharedInstance] setActive:YES error:NULL];
+        
+        [self playAudioFiles];
+    }
 }
 
 // 播放声音文件
@@ -104,14 +108,55 @@
     if (self.audioPlayer.isPlaying) {
         return;
     }
-    
+    NSLog(@"yangjing_%@: filePath->%@", NSStringFromClass([self class]), filePath);
+
     NSData *data = [NSData dataWithContentsOfURL:fileURL];
     if (!data) {
         NSLog(@"yangjing_%@: data is nil", NSStringFromClass([self class]));
+        
+        //发送本地通知
+//        if (@available(iOS 10.0, *)) {
+//            NSLog(@"yangjing_%@: UNMutableNotificationContent", NSStringFromClass([self class]));
 
+//            // 1.创建通知内容
+//            UNMutableNotificationContent *content = [[UNMutableNotificationContent alloc] init];
+//            content.sound = [UNNotificationSound soundNamed:fileName];
+//            content.title = @"BKS通知";
+//            content.subtitle = @"收款通知";
+//            content.body = @"收款";
+//            content.badge = @(0);
+//
+//            content.userInfo = @{@"id":@"LOCAL_NOTIFY_SCHEDULE_ID"};
+            
+            // 2.设置通知附件内容
+//            NSError *error = nil;
+//            NSString *path = [NSString stringWithFormat:@"%@/%@", [[NSBundle mainBundle] resourcePath], @"logo.png"];
+//            UNNotificationAttachment *att = [UNNotificationAttachment attachmentWithIdentifier:@"att1" URL:[NSURL fileURLWithPath:path] options:nil error:&error];
+//            if (error) {
+//                NSLog(@"attachment error %@", error);
+//            }
+//            content.attachments = @[att];
+//            content.launchImageName = @"logo";
+//            // 2.设置声音
+//            UNNotificationSound *sound = [UNNotificationSound soundNamed:fileName];// [UNNotificationSound defaultSound];
+//            content.sound = sound;
+//
+//            // 3.触发模式
+//            UNTimeIntervalNotificationTrigger *trigger = [UNTimeIntervalNotificationTrigger triggerWithTimeInterval:0 repeats:NO];
+//
+//            // 4.设置UNNotificationRequest
+//            UNNotificationRequest *request = [UNNotificationRequest requestWithIdentifier:@"att12" content:content trigger:trigger];
+//
+//            // 5.把通知加到UNUserNotificationCenter, 到指定触发点会被触发
+//            [[UNUserNotificationCenter currentNotificationCenter] addNotificationRequest:request withCompletionHandler:^(NSError * _Nullable error) {
+//                NSLog(@"yangjing_%@: UNMutableNotificationContent Completion error->%@", NSStringFromClass([self class]), error ? @"yes" : @"no");
+//
+//            }];
+//
+//        }
+//
+//        return;
     }
-    
-    NSLog(@"yangjing_%@: filePath->%@", NSStringFromClass([self class]), filePath);
     
     NSError *error = nil;
     self.audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:fileURL error:&error];
@@ -120,6 +165,7 @@
         [self audioPlayerPlayNextFile];
         return;
     }
+
     self.audioPlayer.currentTime = 0;
     self.audioPlayer.numberOfLoops = 0 ;
     self.audioPlayer.delegate = self;
@@ -165,6 +211,8 @@
         self.currentIndex = 0;
         
         [self.audioFiles removeAllObjects];
+        
+        if (self.completed) self.completed(YES);
     }
 }
 
