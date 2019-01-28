@@ -60,6 +60,8 @@
 		39F864FB21FEE13D001C4E80 /* tts_5.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 39F864D621FEE119001C4E80 /* tts_5.mp3 */; };
 		39F864FC21FEE13D001C4E80 /* tts_7.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 39F864D721FEE119001C4E80 /* tts_7.mp3 */; };
 		39F864FD21FEE13D001C4E80 /* tts_6.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 39F864D821FEE119001C4E80 /* tts_6.mp3 */; };
+		39F8650121FEE306001C4E80 /* JPushTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 39F8650021FEE306001C4E80 /* JPushTool.m */; };
+		39F8650421FEEC8A001C4E80 /* Pods_VoiceBroadcastDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A327292B11870FA1EEA7DE5 /* Pods_VoiceBroadcastDemo.framework */; };
 		64B558F6DDE32420B2F52115 /* Pods_VoiceBroadcastDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A327292B11870FA1EEA7DE5 /* Pods_VoiceBroadcastDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -152,6 +154,9 @@
 		39F864D621FEE119001C4E80 /* tts_5.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = tts_5.mp3; sourceTree = "<group>"; };
 		39F864D721FEE119001C4E80 /* tts_7.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = tts_7.mp3; sourceTree = "<group>"; };
 		39F864D821FEE119001C4E80 /* tts_6.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = tts_6.mp3; sourceTree = "<group>"; };
+		39F864FF21FEE306001C4E80 /* JPushTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JPushTool.h; sourceTree = "<group>"; };
+		39F8650021FEE306001C4E80 /* JPushTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JPushTool.m; sourceTree = "<group>"; };
+		39F8650221FEEBE1001C4E80 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		5019ACCB8CA81A3EB24772E1 /* Pods-VoiceBroadcastDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoiceBroadcastDemo.release.xcconfig"; path = "Target Support Files/Pods-VoiceBroadcastDemo/Pods-VoiceBroadcastDemo.release.xcconfig"; sourceTree = "<group>"; };
 		FD629B5BEF6D327B5C870B9F /* Pods-VoiceBroadcastDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoiceBroadcastDemo.debug.xcconfig"; path = "Target Support Files/Pods-VoiceBroadcastDemo/Pods-VoiceBroadcastDemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -183,6 +188,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39F8650421FEEC8A001C4E80 /* Pods_VoiceBroadcastDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,6 +300,7 @@
 		3941F31521FADB18007F7FE3 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				39F864FE21FEE2C9001C4E80 /* JpushTool */,
 				39F864C221FEE10B001C4E80 /* AudioTool */,
 				3941F39621FAEEC6007F7FE3 /* Category */,
 			);
@@ -364,6 +371,15 @@
 			path = Audios;
 			sourceTree = "<group>";
 		};
+		39F864FE21FEE2C9001C4E80 /* JpushTool */ = {
+			isa = PBXGroup;
+			children = (
+				39F864FF21FEE306001C4E80 /* JPushTool.h */,
+				39F8650021FEE306001C4E80 /* JPushTool.m */,
+			);
+			path = JpushTool;
+			sourceTree = "<group>";
+		};
 		9BB23A61CDE2602325D58337 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -376,6 +392,7 @@
 		F181AECCA1BBDCC0CE01F5CD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				39F8650221FEEBE1001C4E80 /* libz.tbd */,
 				39F864BD21FEBDD5001C4E80 /* AVFoundation.framework */,
 				39F8647D21FE9710001C4E80 /* PushKit.framework */,
 				0A327292B11870FA1EEA7DE5 /* Pods_VoiceBroadcastDemo.framework */,
@@ -618,6 +635,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39F8650121FEE306001C4E80 /* JPushTool.m in Sources */,
 				3941F34F21FADB18007F7FE3 /* ViewController.m in Sources */,
 				3941F39C21FAF11D007F7FE3 /* NSString+YJString.m in Sources */,
 				3941F34021FADB18007F7FE3 /* AppDelegate.m in Sources */,

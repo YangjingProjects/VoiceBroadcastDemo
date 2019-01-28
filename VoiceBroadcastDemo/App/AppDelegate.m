@@ -7,9 +7,13 @@
 //
 
 #import "AppDelegate.h"
+
+#ifdef NSFoundationVersionNumber_iOS_9_x_Max
 #import <UserNotifications/UserNotifications.h>
+#endif
+
 #import "YJAudioTool.h"
-#import <PushKit/PushKit.h>
+#import "JPushTool.h"
 #import "YJMacro.h"
 
 @interface AppDelegate () <UNUserNotificationCenterDelegate>
@@ -45,6 +49,9 @@
         [[UIApplication sharedApplication] registerForRemoteNotifications];
     }
     
+    //初始化JPushSDK
+    [[JPushTool shareTool] registerJPUSH:launchOptions];
+    
     return YES;
 }
 
@@ -61,6 +68,8 @@
     
     [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
     [[UIApplication sharedApplication] cancelAllLocalNotifications];
+    
+    [[JPushTool shareTool] setBadge:0];
 }
 
 
@@ -87,6 +96,7 @@
 //远程推送注册成功
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     NSLog(@"yangjing_%@: deviceToken->%@", NSStringFromClass([self class]), [deviceToken description]);
+    [[JPushTool shareTool] registerForRemoteNotificationsWithDeviceToken:deviceToken];
 }
 
 //远程推送注册失败
@@ -98,7 +108,7 @@
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
     NSLog(@"yangjing_%@: userInfo->%@ ", NSStringFromClass([self class]), userInfo);
     
-    [[YJAudioTool sharedPlayer] playPushInfo:userInfo completed:nil];
+    [[YJAudioTool sharedPlayer] playPushInfo:userInfo backModes:NO completed:nil];
 }
 
 //ios10之前接收本地推送
@@ -117,7 +127,7 @@
         //未经过NotificationService处理
         if (![userInfo.allKeys containsObject:@"hasHandled"]) {
             if ([UIApplication sharedApplication].applicationState == UIApplicationStateActive) {
-                [[YJAudioTool sharedPlayer] playPushInfo:userInfo completed:nil];
+                [[YJAudioTool sharedPlayer] playPushInfo:userInfo backModes:NO completed:nil];
                 completionHandler(UNNotificationPresentationOptionNone);
                 
             } else {

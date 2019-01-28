@@ -30,7 +30,7 @@
     self.bestAttemptContent.sound = nil;
     
     __weak typeof(self) weakSelf = self;
-    [[YJAudioTool sharedPlayer] playPushInfo:weakSelf.bestAttemptContent.userInfo completed:^(BOOL success) {
+    [[YJAudioTool sharedPlayer] playPushInfo:weakSelf.bestAttemptContent.userInfo backModes:YES completed:^(BOOL success) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
         if (strongSelf) {
             NSMutableDictionary *dict = [strongSelf.bestAttemptContent.userInfo mutableCopy] ;

@@ -14,7 +14,7 @@ typedef void (^YJCompleteBlock)(BOOL success) ;
 
 + (instancetype)sharedPlayer;
 
-- (void)playPushInfo:(NSDictionary *)userInfo completed:(YJCompleteBlock)completed;
+- (void)playPushInfo:(NSDictionary *)userInfo backModes:(BOOL)backModes completed:(YJCompleteBlock)completed;
 
 - (void)stopAudioPlayer;
 

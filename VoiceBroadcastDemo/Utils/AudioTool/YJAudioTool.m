@@ -8,7 +8,10 @@
 
 #import "YJAudioTool.h"
 #import <AVFoundation/AVFoundation.h>
+
+#ifdef NSFoundationVersionNumber_iOS_9_x_Max
 #import <UserNotifications/UserNotifications.h>
+#endif
 
 #import "NSDictionary+YJDictionary.h"
 #import "NSString+YJString.h"
@@ -39,7 +42,7 @@
     return tool ;
 }
 
-- (void)playPushInfo:(NSDictionary *)userInfo completed:(YJCompleteBlock)completed {
+- (void)playPushInfo:(NSDictionary *)userInfo backModes:(BOOL)backModes completed:(YJCompleteBlock)completed {
     
     NSDictionary *apsDic =  [userInfo nunullValueForKey:@"aps"] ;
     if (!apsDic) {
@@ -51,9 +54,14 @@
     
     //amount:金额/元
     NSNumber *amountNum = [apsDic nunullValueForKey:@"amount"];
+    //极光推送调试附加字段与aps字段同级
+    if (!amountNum) {
+        amountNum = [userInfo nunullValueForKey:@"amount"];
+    }
+    
     if(amountNum) {
         double amount = [amountNum doubleValue];
-        [self playMoneyReceived:amount completed:completed] ;
+        [self playMoneyReceived:amount backModes:backModes completed:completed] ;
         
     } else {
         if (completed) completed(NO);
@@ -61,7 +69,7 @@
 }
 
 
-- (void)playMoneyReceived:(double)amount completed:(YJCompleteBlock)completed {
+- (void)playMoneyReceived:(double)amount backModes:(BOOL)backModes completed:(YJCompleteBlock)completed {
     self.completed = completed ;
 
     // 将金额转换为对应的文字
@@ -88,7 +96,7 @@
     [self.audioFiles addObject:subAudioFiles];
     
     if (self.subIndex <= 0) {
-        if (yjIOS12_1) {
+        if (yjIOS12_1 && backModes) {
             [self addLocalNotices];
             
         } else {
